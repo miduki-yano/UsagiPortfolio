@@ -17,6 +17,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="UsagiPortfolio.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Usagi's Portfolio</title>
 </head>
 <body>
@@ -26,16 +28,16 @@
                 <div class="header_logo">
                     <a href="#" class="header_logo_link">Usagi's Portfolio</a>
                 </div>
+                <nav class="header_menu">
+                    <ul class="header_list">
+                        <li class="header_item"><a href="#works" class="header_link">Works</a></li>
+                        <li class="header_item"><a href="#skills" class="header_link">Skills</a></li>
+                        <li class="header_item"><a href="#service" class="header_link">Service</a></li>
+                        <li class="header_item"><a href="#about" class="header_link">About me</a></li>
+                        <li class="header_item"><a href="#contact" class="header_link">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="header_menu">
-                <ul class="header_list">
-                    <li class="header_item"><a href="#works">Works</a></li>
-                    <li class="header_item"><a href="#skills">Skills</a></li>
-                    <li class="header_item"><a href="#service">Service</a></li>
-                    <li class="header_item"><a href="#about">About me</a></li>
-                    <li class="header_item"><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
         </header>
         <main class="main">
             <div class="main_inner">
@@ -315,9 +317,68 @@
                         </div>
                     </div>
                 </section>
+                <section class="about" id="about">
+                    <div class="c-inner-1v1">
+                        <h2 class="c-heading-1v1 js-fadein">About Me</h2>
+                        <div class="container">
+                            <div class="row">
+                                <div class="about_img col-sm-5 js-fadein">
+                                    <img src="./assets/images/profile.png" alt="My name"/>
+                                    <h3 class="about_name">usausa</h3>
+                                </div>
+                                <div class="about_prof col-md-7 js-fadein">
+                                    <p class="about_info">
+                                        ここにプロフィール情報<br/>
+                                        <br/>
+                                        テキストテキストテキストテキストテキストテキストテキスト<br/>
+                                        テキストテキストテキストテキストテキスト<br/>
+                                        <br/>
+                                        テキストテキストテキストテキストテキストテキスト<br/>
+                                        テキストテキストテキストテキストテキスト<br/>
+                                        <br/>
+                                        テキストテキストテキストテキストテキスト<br/>
+                                        テキストテキストテキストテキストテキストテキストテキスト<br/>
+                                        テキストテキストテキストテキスト<br/>
+                                        テキストテキストテキストテキストテキストテキスト<br/>
+                                        <div class="git-page">
+                                            <i class="fas fa-link"></i>
+                                            <a rel="noreferrer noopener" href="https://github.co.jp/" target="_blank">GitHub</a>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section class="contact" id="contact">
+                    <div class="c-inner-1v1">
+                        <h2 class="c-heading-1v1 js-fadein">Contact</h2>
+                        <div class="container">
+                            <p class="row text-center contact_row js-fadein">
+                                制作のご依頼・ご相談などは<br class="u-hidden-pc"/>下記のSNSまたはメールアドレスにてお願いします。
+                            </p>
+                            <div class="contact_block js-fadein">
+                                <div class="contact_inner">
+                                    <a href="https://twitter.com/" class="contact__sns">Twitter</a>
+                                </div>
+                                <div class="contact_inner">
+                                    <a href="mailto:testtest@gmail.com" class="contact__mail">testtest@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
             </div>
         </main>
+        <footer class="footer">
+            <div class="footer_inner container">
+                <p class="footer_cr">
+                    Copyright © <span id="year"></span>usausa Portfolio All right reserved.
+                </p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
