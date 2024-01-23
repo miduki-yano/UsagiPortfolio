@@ -17,7 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="UsagiPortfolio.css"/>
+    <link rel="stylesheet" href="動きのあるポートフォリオサイト/assets/css/UsagiPortfolio.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Usagi's Portfolio</title>
 </head>
@@ -45,8 +45,10 @@
                     <div class="top_heading">
                         <h1 class="top_title">Welcome To My Portfolio</h1>
                     </div>
-                    <p class="top_scroll-bar">
-                        <span>scroll</span>
+                    <p class="top_scroll">
+                    <div class="top_scroll-bar">
+                        <!--ここに::beforeの疑似クラスが入る--><span>scroll</span><!--ここに::afterの疑似クラスが入る-->
+                    </div>
                     </p>
                 </section>
                 <section class="works" id="works">
@@ -55,13 +57,13 @@
                         <div class="container">
                             <div class="row works_row">
 
-                                <a rel="noreferrer noopener" href="https://maipyon.net/programming/portfolio-template/" class="works__link col-md-4 js-fadein--queue" target="_blank">
+                                <a rel="noreferrer noopener" href="https://maipyon.net/programming/portfolio-template/" class="works_link col-md-4 js-fadein--queue" target="_blank">
                                     <p class="works_img">
                                         <img src="./assets/images/work1.png" alt=""/>
                                     </p>
                                     <div class="works_box">
                                         <h3 class="works_title">
-                                            ポートフォリオ<br class="u-hidden-pc"/><span class="works__title--sub">（当サイト）</span>
+                                            ポートフォリオ<br class="u-hidden-pc"/><span class="works_title--sub">（当サイト）</span>
                                         </h3>
                                         <p class="works_ur1">https://maipyon.net/programming/portfolio-template/</p>
                                         <div class="works_lang">
@@ -73,99 +75,99 @@
                                     </div>
                                 </a>
 
-                                <a rel="noreferrer noopener" href="https://maipyon.net/programming/" class="works__link col-md-4 js-fadein--queue" target="_blank">
-                                    <p class="works__img">
+                                <a rel="noreferrer noopener" href="https://maipyon.net/programming/" class="works_link col-md-4 js-fadein--queue" target="_blank">
+                                    <p class="works_img">
                                         <img src="./assets/images/work_maipyon.png" alt=""/>
                                     </p>
-                                    <div class="works__box">
-                                        <h3 class="works__title">
-                                        プログラミング特化ブログ<br class="u-hidden-pc"/><span class="works__title--sub">（ブログ）</span>
+                                    <div class="works_box">
+                                        <h3 class="works_title">
+                                        プログラミング特化ブログ<br class="u-hidden-pc"/><span class="works_title--sub">（ブログ）</span>
                                         </h3>
-                                        <p class="works__url">
+                                        <p class="works_url">
                                             https://maipyon.net/programming/
                                         </p>
-                                        <div class="works__lang">
-                                            <span class="works__lang--wordpress">WordPress</span>
-                                            <span class="works__lang--writing">Writing</span>
+                                        <div class="works_lang">
+                                            <span class="works_lang--wordpress">WordPress</span>
+                                            <span class="works_lang--writing">Writing</span>
                                         </div>
-                                        <p class="works__txt">
+                                        <p class="works_txt">
                                             運用中のプログラミング情報に特化したブログです。
                                             SEOだけでなく、読みやすさや記事の質にもこだわったサイトです。
                                         </p>
                                     </div>
                                 </a>
 
-                                <a rel="noreferrer noopener" href="./" class="works__link col-md-4 js-fadein--queue" target="_blank">
-                                    <p class="works__img">
+                                <a rel="noreferrer noopener" href="./" class="works_link col-md-4 js-fadein--queue" target="_blank">
+                                    <p class="works_img">
                                         <img src="./assets/images/work.png" alt=""/>
                                     </p>
-                                    <div class="works__box">
-                                        <h3 class="works__title">
+                                    <div class="works_box">
+                                        <h3 class="works_title">
                                             舞跳建設<br class="u-hidden-pc"/>
-                                            <span class="works__title--sub">（コーポレートサイト）</span>
+                                            <span class="works_title--sub">（コーポレートサイト）</span>
                                         </h3>
-                                        <p class="works__url">
+                                        <p class="works_url">
                                             https://test.com/test-wordpress/
                                         </p>
-                                        <div class="works__lang">
-                                            <span class="works__lang--wordpress">WordPress</span>
-                                            <span class="works__lang--php">PHP</span>
+                                        <div class="works_lang">
+                                            <span class="works_lang--wordpress">WordPress</span>
+                                            <span class="works_lang--php">PHP</span>
                                         </div>
-                                        <p class="works__txt">
+                                        <p class="works_txt">
                                             架空の建設会社のサイトです。コーディング〜WordPress構築まで自作しました。
                                         </p>
                                     </div>
                                 </a>
 
-                                <a rel="noreferrer noopener" href="./" class="works__link col-md-4 js-fadein--queue" target="_blank">
-                                    <p class="works__img">
+                                <a rel="noreferrer noopener" href="./" class="works_link col-md-4 js-fadein--queue" target="_blank">
+                                    <p class="works_img">
                                         <img src="./assets/images/work.png" alt=""/>
                                     </p>
-                                    <div class="works__box">
-                                        <h3 class="works__title">
+                                    <div class="works_box">
+                                        <h3 class="works_title">
                                             化粧品LP<br class="u-hidden-pc"/>
-                                            <span class="works__title--sub">（架空のLP）</span>
+                                            <span class="works_title--sub">（架空のLP）</span>
                                         </h3>
-                                        <p class="works__url">https://test.com/cosme_lp/</p>
-                                        <div class="works__lang">
-                                            <span class="works__lang--photoshop">Photoshop</span>
+                                        <p class="works_url">https://test.com/cosme_lp/</p>
+                                        <div class="works_lang">
+                                            <span class="works_lang--photoshop">Photoshop</span>
                                         </div>
-                                        <p class="works__txt">
+                                        <p class="works_txt">
                                             分かりやすさと女性らしさをイメージした架空のLPです。
                                             落ち着いた雰囲気を目指しました。
                                         </p>
                                     </div>
                                 </a>
 
-                                <a rel="noreferrer noopener" href="./" class="works__link col-md-4 js-fadein--queue" target="_blank">
-                                    <p class="works__img">
+                                <a rel="noreferrer noopener" href="./" class="works_link col-md-4 js-fadein--queue" target="_blank">
+                                    <p class="works_img">
                                         <img src="./assets/images/work.png" alt=""/>
                                     </p>
-                                    <div class="works__box">
-                                        <h3 class="works__title">オリジナルWordPressテーマ</h3>
-                                        <p class="works__url">https://test.com/wordpress-mytheme/</p>
-                                        <div class="works__lang">
-                                            <span class="works__lang--wordpress">WordPress</span>
-                                            <span class="works__lang--php">PHP</span>
+                                    <div class="works_box">
+                                        <h3 class="works_title">オリジナルWordPressテーマ</h3>
+                                        <p class="works_url">https://test.com/wordpress-mytheme/</p>
+                                        <div class="works_lang">
+                                            <span class="works_lang--wordpress">WordPress</span>
+                                            <span class="works_lang--php">PHP</span>
                                         </div>
-                                        <p class="works__txt">
+                                        <p class="works_txt">
                                         ブログ型レイアウトのオリジナルWordPressテーマです。
                                         </p>
                                     </div>
                                 </a>
 
-                                <a rel="noreferrer noopener" href="./" class="works__link col-md-4 js-fadein--queue" target="_blank">
-                                    <p class="works__img">
+                                <a rel="noreferrer noopener" href="./" class="works_link col-md-4 js-fadein--queue" target="_blank">
+                                    <p class="works_img">
                                         <img src="./assets/images/work.png" alt=""/>
                                     </p>
-                                    <div class="works__box">
-                                        <h3 class="works__title">掲示板サイト</h3>
-                                        <p class="works__url">https://test.com/board/</p>
-                                        <div class="works__lang">
-                                            <span class="works__lang--js">Javascript</span>
-                                            <span class="works__lang--php">PHP</span>
+                                    <div class="works_box">
+                                        <h3 class="works_title">掲示板サイト</h3>
+                                        <p class="works_url">https://test.com/board/</p>
+                                        <div class="works_lang">
+                                            <span class="works_lang--js">Javascript</span>
+                                            <span class="works_lang--php">PHP</span>
                                         </div>
-                                        <p class="works__txt">
+                                        <p class="works_txt">
                                             ログイン機能のあるページを制作しました。
                                             自由に書き込みができる掲示板サイトです。
                                         </p>
@@ -197,101 +199,101 @@
                                     </div>
                                 </li>
 
-                                <li class="skills__item col-md-3">
-                                    <div class="skills__block">
-                                        <div class="skills__circle" data-progress="90">
-                                            <div class="skills__circle-inner">
-                                                <div class="skills__icon">
+                                <li class="skills_item col-md-3">
+                                    <div class="skills_block">
+                                        <div class="skills_circle" data-progress="90">
+                                            <div class="skills_circle-inner">
+                                                <div class="skills_icon">
                                                     <img src="./assets/images/icons/language_logo.png" alt=""/>
                                                 </div>
                                                 <div class="skill_per">90%</div>
                                             </div>
                                         </div>
-                                        <h3 class="skills__name">CSS</h3>
+                                        <h3 class="skills_name">CSS</h3>
                                     </div>
                                 </li>
 
-                                <li class="skills__item col-md-3">
-                                    <div class="skills__block">
-                                        <div class="skills__circle" data-progress="90">
-                                            <div class="skills__circle-inner">
-                                                <div class="skills__icon">
+                                <li class="skills_item col-md-3">
+                                    <div class="skills_block">
+                                        <div class="skills_circle" data-progress="90">
+                                            <div class="skills_circle-inner">
+                                                <div class="skills_icon">
                                                     <img src="./assets/images/icons/language_logo.png" alt=""/>
                                                 </div>
                                                 <div class="skill_per">90%</div>
                                             </div>
                                         </div>
-                                        <h3 class="skills__name">WordPress</h3>
+                                        <h3 class="skills_name">WordPress</h3>
                                     </div>
                                 </li>
 
-                                <li class="skills__item col-md-3">
-                                    <div class="skills__block">
-                                        <div class="skills__circle" data-progress="70">
-                                            <div class="skills__circle-inner">
-                                                <div class="skills__icon">
+                                <li class="skills_item col-md-3">
+                                    <div class="skills_block">
+                                        <div class="skills_circle" data-progress="70">
+                                            <div class="skills_circle-inner">
+                                                <div class="skills_icon">
                                                     <img src="./assets/images/icons/language_logo.png" alt=""/>
                                                 </div>
                                                 <div class="skill_per">70%</div>
                                             </div>
                                         </div>
-                                        <h3 class="skills__name">Sass</h3>
+                                        <h3 class="skills_name">Sass</h3>
                                     </div>
                                 </li>
 
-                                <li class="skills__item col-md-3">
-                                    <div class="skills__block">
-                                        <div class="skills__circle" data-progress="80">
-                                            <div class="skills__circle-inner">
-                                                <div class="skills__icon">
+                                <li class="skills_item col-md-3">
+                                    <div class="skills_block">
+                                        <div class="skills_circle" data-progress="80">
+                                            <div class="skills_circle-inner">
+                                                <div class="skills_icon">
                                                     <img src="./assets/images/icons/language_logo.png" alt="html"/>
                                                 </div>
                                                 <div class="skill_per">80%</div>
                                             </div>
                                         </div>
-                                        <h3 class="skills__name">Javascript/jQuery</h3>
+                                        <h3 class="skills_name">Javascript/jQuery</h3>
                                     </div>
                                 </li>
 
-                                <li class="skills__item col-md-3">
-                                    <div class="skills__block">
-                                        <div class="skills__circle" data-progress="70">
-                                            <div class="skills__circle-inner">
-                                                <div class="skills__icon">
+                                <li class="skills_item col-md-3">
+                                    <div class="skills_block">
+                                        <div class="skills_circle" data-progress="70">
+                                            <div class="skills_circle-inner">
+                                                <div class="skills_icon">
                                                     <img src="./assets/images/icons/language_logo.png" alt="html"/>
                                                 </div>
                                                 <div class="skill_per">70%</div>
                                             </div>
                                         </div>
-                                        <h3 class="skills__name">git</h3>
+                                        <h3 class="skills_name">git</h3>
                                     </div>
                                 </li>
 
-                                <li class="skills__item col-md-3">
-                                    <div class="skills__block">
-                                        <div class="skills__circle" data-progress="50">
-                                            <div class="skills__circle-inner">
-                                                <div class="skills__icon">
+                                <li class="skills_item col-md-3">
+                                    <div class="skills_block">
+                                        <div class="skills_circle" data-progress="50">
+                                            <div class="skills_circle-inner">
+                                                <div class="skills_icon">
                                                     <img src="./assets/images/icons/language_logo.png" alt="html"/>
                                                 </div>
                                                 <div class="skill_per">50%</div>
                                             </div>
                                         </div>
-                                        <h3 class="skills__name">Photoshop</h3>
+                                        <h3 class="skills_name">Photoshop</h3>
                                     </div>
                                 </li>
 
-                                <li class="skills__item col-md-3">
-                                    <div class="skills__block">
-                                        <div class="skills__circle" data-progress="40">
-                                            <div class="skills__circle-inner">
-                                                <div class="skills__icon">
+                                <li class="skills_item col-md-3">
+                                    <div class="skills_block">
+                                        <div class="skills_circle" data-progress="40">
+                                            <div class="skills_circle-inner">
+                                                <div class="skills_icon">
                                                     <img src="./assets/images/icons/language_logo.png" alt="html"/>
                                                 </div>
                                                 <div class="skill_per">40%</div>
                                             </div>
                                         </div>
-                                        <h3 class="skills__name">PHP</h3>
+                                        <h3 class="skills_name">PHP</h3>
                                     </div>
                                 </li>
 
@@ -304,10 +306,10 @@
                         <h2 class="c-heading-1v1 js-fadein">Service</h2>
                         <div class="container">
                             <div class="row service_row">
-                                <div class="col-md-3 service__block js-fadein--queue">
+                                <div class="col-md-3 service_block js-fadein--queue">
                                     <h3 class="service_title">HP制作・LP制作</h3>
                                     <div class="service_icon-box">
-                                        <i class="fas fa-desktop service__icon"></i><!--iタグは中身をイタリック体にする-->
+                                        <i class="fas fa-desktop service_icon"></i><!--iタグは中身をイタリック体にする-->
                                     </div>
                                     <div class="service_box">
                                         <p class="service_txt"></p>
@@ -360,10 +362,10 @@
                             </p>
                             <div class="contact_block js-fadein">
                                 <div class="contact_inner">
-                                    <a href="https://twitter.com/" class="contact__sns">Twitter</a>
+                                    <a href="https://twitter.com/" class="contact_sns">Twitter</a>
                                 </div>
                                 <div class="contact_inner">
-                                    <a href="mailto:testtest@gmail.com" class="contact__mail">testtest@gmail.com</a>
+                                    <a href="mailto:testtest@gmail.com" class="contact_mail">testtest@gmail.com</a>
                                 </div>
                             </div>
                         </div>

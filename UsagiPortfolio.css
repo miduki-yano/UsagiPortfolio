@@ -27,8 +27,8 @@ blockquote,q {
 }
 
 blockquote:after,blockquote:before,q:after,q:before {
-    content: "";
-    content: none;/*””は打ち消された？？？？*/
+    /*content: "";*/
+    content: none;/*上書きされるので、上のcontentは意味なし*/
 }
 
 table {
@@ -165,7 +165,7 @@ a:hover {
 }
 
 .top {/*ファーストビューの部分*/
-    position: relative;
+    position: relative;./*元々の位置を基準にする*/
     width: 100%;
     height: 600px;
     background-color: #f7f7f7;
@@ -178,7 +178,7 @@ a:hover {
 
 .top_heading {
     line-height: 1;
-    position: relative;
+    position: relative;/*元々の位置を基準にする*/
     top: 45%;
     text-align: center;
 }
@@ -204,13 +204,16 @@ a:hover {
 }
 
 .top_scroll-bar {
-    position: absolute;
+    position: absolute;/*親要素の位置を基準にする*/
     bottom: 0;
     left: 50%;
     display: block;
     content: "";
     background-color: #333;
     animation: 1.4s ease-in-out infinite arrowmove;
+    /*1.4秒かけてアニメーションが行われる*/
+    /*ease-in-out：アニメーションのタイミング関数（timing function）を指定、ゆっくり・速い・ゆっくりの動きをする*/
+    /*infinite：無限にアニメーションを繰り返す*/
 }
 
 .top_scroll-bar span {
@@ -226,19 +229,35 @@ a:hover {
     writing-mode: vertical-lr;/*縦書きに*/
 }
 
-@keyframes arrowmove {
+@keyframes arrowmove {/*アニメーションの変化の仕方をかく*/
     0%,100% {
+        bottom: 0;/*0％(開始)、100％(終了)の時に下につく*/
+    }
+
+    50% {
+        bottom: 3%;/*50％(中間)の時に親要素の3％の間があく*/
+    }
+
+    /*これと同じ
+
+    0% {
         bottom: 0;
     }
 
     50% {
         bottom: 3%;
     }
+
+    100% {
+        bottom: 0;
+    }
+
+    */
 }
 
-.top_scroll-bar::before {
-    content: "";
-    position: absolute;
+.top_scroll-bar::before {/*クラス名が「top_scroll-bar」の<div>要素の開始タグの直後に疑似要素を作る*/
+    content: "";/*""の中身が、挿入したい文字列*/
+    position: absolute;/*親要素の位置を基準にする*/
     bottom: 0;
     right: -6px;
     width: 1px;
@@ -247,15 +266,16 @@ a:hover {
     transform: skewx(-31deg);/*x軸方向(垂直方向)に傾斜させる*/
 }
 
-.top_scroll-bar::after {
-    content: "";
-    position: absolute;
+.top_scroll-bar::after {/*クラス名が「top_scroll-bar」の<div>要素の終了タグの直後に疑似要素を作る*/
+    content: "";/*""の中身が、挿入したい文字列*/
+    position: absolute;/*親要素の位置を基準にする*/
     bottom: 0;
     right: 0;
     width: 1px;
     height: 50px;
     background-color: #333;
 }
+
 
 .c-heading-1v1 {
     text-align: center;
@@ -273,13 +293,14 @@ a:hover {
     margin-top: 2rem;
 }
 
+
 .works_row {
     display: flex;
     flex-wrap: wrap;
 }
 
 .works_link {
-    position: relative;
+    position: relative;/*元々の位置を基準にする*/
     display: block;
     overflow: hidden;
     width: calc(33% - 30px);
@@ -290,3 +311,492 @@ a:hover {
     box-shadow: 0 0 3px 0 rgb(0 0 0 / 12%),0 2px 3px 0 rgb(0 0 0 / 22%);
 }
 
+.works_link:nth-of-type(n+4){/*上から(先頭ｎから４番目まで)番目のworks_link要素に対する装飾*/
+    margin: 50px 15px 0;/*１～４番目の装飾は共通している*/
+}
+
+.works_link:hover {
+    box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%),0 0 5px rgb(0 0 0 / 10%);
+    transform: translateY(-4px);/*上部を起点に元の位置からの縦方向の移動*/
+}
+
+.works_img {
+    overflow: hidden;
+    height: 200px;
+}
+
+.works_img img {
+    width: 100%;
+}
+
+.works_box {
+    padding: 15px;
+}
+
+.works_title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.works_title--sub {
+    font-size: 1.2rem;
+}
+
+.works_url {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.works_lang span {
+    font-size: 1.2rem;
+    padding: 0.2rem 1rem;
+    border-radius: 2rem;
+    color: #fff;
+}
+
+.works_lang span:nth-child(n+2) {
+    margin-left: 0.5rem;
+}
+
+.works_lang--js {
+    background-color: #f5d13a;
+}
+
+.works_lang--wordpress {
+    background-color: #056085;
+}
+
+.works_lang--writing {
+    background-color: #4caf50;
+}
+
+.works_lang--php {
+    background-color: #838eb7;
+}
+
+.works_lang--photoshop {
+    background-color: #00c2f7;
+}
+
+.works_txt {
+    margin-top: 1rem;
+}
+
+.skills {
+    background: 0 0/cover #f7f7f7;
+}
+
+.skills_container {
+    padding: 0 2rem;
+}
+
+.skills_item {
+    margin-bottom: 30px;
+}
+
+.skills_block {
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 12%),0 2px 3px 0 rgb(0 0 0 / 22%);
+    border-radius: 10px;
+    padding: 1rem;
+    background: #fff;
+}
+
+.skills_circle {
+    margin: 1rem auto 2rem;
+    position: relative;/*元々の位置を基準にする*/
+    width: 120px;
+    height: 120px;
+    background-color: #4fc3f7;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;/*値が大きいほど、手前に重なる。ヘッダーは999なのでそれと比べると、ヘッダーより背面に配置される*/
+}
+
+.skills_circle:hover {
+    cursor: pointer;/*マウスでこの部分にホバー時に、カーソルが人差し指でクリックを促すポインターになる*/
+}
+
+.skills_circle::before {
+    content: "";
+    display: block;
+    position: absolute;/*親要素の位置を基準にする*/
+    top: 0;
+    left: -60px;
+    width: 120px;
+    background-color: #eef3f7;
+    transform-origin: right 60px;
+    z-index: 2;/*.skills_circleの要素よりは前面に位置する*/
+}
+
+.skills_circle-90::before {
+    animation: 2s linear forwards rotate-circle-left-90;
+    /*forwards:再生後、アニメーション終了時のスタイルが適用されたままになる*/
+    /*linear:始めから終わりまで一定の速度で変化する*/
+    /*rotate-circle-left-90:アニメーションの詳細とつながるキー*/
+}
+
+.skills_circle-80::before {
+    animation: 2s linear forwards rotate-circle-left-80;
+}
+
+.skills_circle-70::before {
+    animation: 2s linear forwards rotate-circle-left-70;
+}
+
+.skills_circle-60::before {
+    animation: 2s linear forwards rotate-circle-left-60;
+}
+
+.skills_circle-max::after {
+    animation: 2s linear forwards rotate-circle-right-max;
+}
+
+.skills_circle-50::after {
+    animation: 2s linear forwards rotate-circle-right-50;
+}
+
+.skills_circle-40::after {
+    animation: 2s linear forwards rotate-circle-right-40;
+}
+
+.skills_circle-30::after {
+    animation: 2s linear forwards rotate-circle-right-30;
+}
+
+.skills_circle .skills_circle-inner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 4;/*３以下の要素はこの要素より背面に*/
+}
+
+@keyframes rotate-circle-right-max {
+    0% {
+        transform: rotate(0);/*要素の形はそのままで、要素の中心から0度くるっと回る*/
+        background-color: #eef3f7;
+    }
+
+    50% {
+        transform: rotate(180deg);/*要素の形はそのままで、要素の中心から180度くるっと回る*/
+        background-color: #eef3f7;
+    }
+
+    100%,50.01% {
+        transform: rotate(360deg);/*要素の形はそのままで、要素の中心から360度くるっと回る*/
+        background-color: #4fc3f7;
+    }
+
+}
+
+@keyframes rotate-circle-left-90 {
+    0%,50% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(144deg);
+    }
+}
+
+@keyframes rotate-circle-left-80 {
+    0%,50% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(108deg);
+    }
+}
+
+@keyframes rotate-circle-left-70 {
+    0%,50% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(72deg);
+    }
+}
+
+@keyframes rotate-circle-left-60 {
+    0%,50% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(36deg);
+    }
+}
+
+@keyframes rotate-circle-left-50 {
+    0% {
+        transform: rotate(0);
+        background-color: #eef3f7;
+    }
+
+    100% {
+        transform: rotate(180deg);
+        background-color: #eef3f7;
+    }
+}
+
+@keyframes rotate-circle-left-40 {
+    0% {
+        transform: rotate(0);
+        background-color: #eef3f7;
+    }
+
+    100% {
+        transform: rotate(144deg);
+        background-color: #eef3f7;
+    }
+}
+
+@keyframes rotate-circle-left-30 {
+    0% {
+        transform: rotate(0);
+        background-color: #eef3f7;
+    }
+
+    100% {
+        transform: rotate(108deg);
+        background-color: #eef3f7;
+    }
+}
+
+.skills_name {
+    border-top: 2px dotted #ccc;/*この要素の上線が２pxのうすグレーの点線*/
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2rem 0 1rem;
+}
+
+.skills_icon img {
+    height: 60px;
+}
+
+.skill-per {
+    position: relative;
+    top: -45px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 2rem;
+    display: none;
+}
+
+.skills_note {
+    font-size: 1.2rem;
+}
+
+.service {
+    background: 0 0/cover #fff;
+    /*0：背景の水平方向の位置*/
+    /*0：背景の垂直方向の位置*/
+    /*/cover：背景のサイズは、要素全体を覆う(要素の大きさに合わせて拡大縮小する)*/
+}
+
+.service_row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.service_block {
+    position: relative;
+    width: calc((100% / 3) - 47px);
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    opacity: 0.7;
+    box-shadow: 0 10px 30px -5px rgb(0 0 0 / 3%);
+}
+
+.service_block+.service_block {
+    margin-left: 70px;
+}
+
+.service_title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.service_icon-box {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 50%;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.service_icon {
+    font-size: 6rem;
+}
+
+.service_txt {
+    margin-top: 2rem;
+}
+
+.about {
+    background: 0 0/cover #f7f7f7;
+}
+
+.about_img img {
+    border-radius: 50%;
+    margin: auto auto 1rem;
+    width: 90%;
+}
+
+.about_name {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+
+.about_info {
+    font-size: 1.8rem;
+    margin-top: 40px;
+}
+
+.git-page {
+    margin-top: 2rem;
+}
+
+.contact {
+    color: #636363;
+    background: 0 0/cover #fff;
+}
+
+.contact a {
+    color: #636363;
+}
+
+.contact a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.contact_row {
+    font-size: 2rem;
+}
+
+.contact_block {
+    display: flex;
+    margin: 10rem 0 14rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact_mail,.contact_sns {
+    margin: 0 2rem;
+    font-size: 3rem;
+    transition: 0.3s;
+}
+
+.contact_sns {
+    color: #4fc3f7!important;
+}
+
+.contact_mail:hover,.contact_sns:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.js-fadein,.js-fadein--queue {
+    transition: 1s;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.is-fadein {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.footer {
+    background-color: #000;
+    padding: 0.5rem 0;
+}
+
+.footer_cr {
+    font-size: 1.4rem;
+    line-height: 2;
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+    .u-hidden-pc {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    img {
+        width: 100%;
+    }
+
+    .header {
+        position: absolute;
+    }
+
+    .header_inner {
+        padding: 15px;
+    }
+
+    .header_menu {
+        display: none;
+    }
+
+    .footer_cr {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .c-heading-1v1 {
+        font-size: 4rem;
+        margin-bottom: 40px;
+    }
+
+    .c-inner-1v1 {
+        padding: 40px 0;
+    }
+
+    .top {
+        border-radius: 0 0 50% 50%/0 0 10% 10%;
+    }
+
+    .works_row {
+        padding: 0 15px;
+    }
+
+    .works_link {
+        width: calc(505 - 7.5px);
+    }
+
+    .works_link:nth-of-type(odd) {
+        margin: 0 7.5px 0 0;
+    }
+
+    .works_link:nth-of-type(2n) {
+        margin: 0 0 0 7.5px;
+    }
+
+    .works_link:nth-last-of-type(n+3) {
+        margin-top: 15px;
+    }
+}
