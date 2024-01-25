@@ -43,8 +43,8 @@ $(function() {
         }
     );
 
-    $('a[href^="#"]').click(function() {
-        var section = $(this).attr("href");
+    $('a[href^="#"]').click(function() {//<a>タグで、hrefの値の先頭に#を含む要素がクリックされた時に実行される処理//
+        var section = $(this).attr("href");//attrメソッド
         i = $("#" == section || "" == section ? "html" : section);
         top_ = i.offset().top - 40;
         return $("body,html").animate({
