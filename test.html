@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Percentage Ring Animation</title>
-<link rel="stylesheet" href="reset.css">
-<link rel="stylesheet" href="test.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style><!--border-radiusを理解するためのテストHTML-->
+    .rounded-box {
+      width: 200px;
+      height: 200px;
+      background-color: #3498db;
+      border-radius: 0 0 50% 50% / 0 0 20% 20%;
+      margin: 20px;
+    }
+  </style>
+  <title>Border Radius Design</title>
 </head>
 <body>
-<div class="ring-container">
-    <div class="ring" data-progress="90">
-        <div class="progress">
-            <p class="ninety">90%</p>
-        </div>
-    </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!--↑これがないと、jQueryをjsファイルに書いても使えない-->
-<script src="test.js"></script>
+  <div class="rounded-box"></div>
 </body>
 </html>

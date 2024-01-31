@@ -427,9 +427,23 @@ a:hover {
     top: 0;
     left: -60px;
     width: 120px;
+    height: 120px;
     background-color: #eef3f7;
     transform-origin: right 60px;
     z-index: 2;/*.skills_circleの要素よりは前面に位置する*/
+}
+
+.skills_circle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 120px;
+    height: 120px;
+    background: #eef3f7;
+    transform-origin: left 60px;
+    z-index: 3
 }
 
 .skills_circle-90::before {
@@ -491,7 +505,7 @@ a:hover {
     }
 
     100%,50.01% {
-        transform: rotate(360deg);/*要素の形はそのままで、要素の中心から360度くるっと回る*/
+        transform: rotate(360deg);/*1秒たった瞬間に反転して元の位置に戻る。そこでアニメーション完了*/
         background-color: #4fc3f7;
     }
 
@@ -537,7 +551,7 @@ a:hover {
     }
 }
 
-@keyframes rotate-circle-left-50 {
+@keyframes rotate-circle-right-50 {
     0% {
         transform: rotate(0);
         background-color: #eef3f7;
@@ -549,7 +563,7 @@ a:hover {
     }
 }
 
-@keyframes rotate-circle-left-40 {
+@keyframes rotate-circle-right-40 {
     0% {
         transform: rotate(0);
         background-color: #eef3f7;
@@ -561,7 +575,7 @@ a:hover {
     }
 }
 
-@keyframes rotate-circle-left-30 {
+@keyframes rotate-circle-right-30 {
     0% {
         transform: rotate(0);
         background-color: #eef3f7;
@@ -586,7 +600,7 @@ a:hover {
     height: 60px;
 }
 
-.skill-per {
+.skill_per {
     position: relative;
     top: -45px;
     background: rgba(0, 0, 0, 0.6);
