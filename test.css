@@ -1,49 +1,114 @@
 .ring-container {
+    margin: 0;
+    padding: 0;
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
 }
 
 .ring {
+    margin: 20px;
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
-    border: 20px solid #06ff69;
-    overflow: hidden; 
+    background-color: #eef3f7;/*初期表示*/
+    text-align: center;
+    overflow: hidden;
     z-index: 1;
 }
 
-.ring::before {
-    content: "";
-    display: block;
-    position: absolute;/*親要素の位置を基準にする*/
-    width: 100%;
-    height: 100%;
-    background-color: #eef3f7;
-    z-index: 2;/*.skills_circleの要素よりは前面に位置する*/
+.ring:hover {
+    background-color: #13ff06;/*ホバー時に背景が緑色になる*/
 }
 
-.ring::after {
-    content: "";
-    display: block;
-    position: absolute;/*親要素の位置を基準にする*/
-    width: 100%;
-    height: 100%;
-    background-color: #eef3f7;
-    z-index: 3;
-}
 
 .progress {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    background-color: #4CAF50; /* リングの色 */
-    transform: rotate(0deg); /* 初期位置 */
-    
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    border-radius: 50%;
+    background-color: #fff; 
+    z-index: 4;
+}
+
+.ninety {
+    display: block;
+    font-size: 30px;
+    margin-top: 85px;
 }
 
 
+.ring:hover::before {/*疑似クラス(:hover)で要素の状態を表した後に、疑似要素(::before)で要素を作る*/
+    content: "";
+    display: block;
+    position: absolute;/*親要素の位置を基準にする*/
+    top: 0;
+    left: -20px;
+    width: 140px;
+    height: 240px;
+    background-color:#eef3f7 ;
+    transform-origin: right 120px;
+    /*transform: rotate(144deg);*/
+    z-index: 2;
+}
 
+.ring:hover::after {
+    content: "";
+    display: block;
+    position: absolute;/*親要素の位置を基準にする*/
+    top: 0;
+    right: -20px;
+    width: 140px;
+    height: 240px;
+    background-color: #eef3f7;
+    transform-origin: left 120px;
+    /*transform: rotate(90deg);*/
+    z-index: 3;
+}
 
+.ring-max::after {
+    animation: 2s linear forwards rotate-ring-right-max;
+}
+
+.ring-90::before {
+    animation: 2s linear forwards rotate-ring-left-90;
+    /*forwards:再生後、アニメーション終了時のスタイルが適用されたままになる*/
+    /*linear:始めから終わりまで一定の速度で変化する*/
+    /*rotate-circle-left-90:アニメーションの詳細とつながるキー*/
+}
+
+@keyframes rotate-ring-right-max {
+    0% {
+        transform: rotate(0);/*アニメーション0秒時点：右側にあったグレーの長方形が傾き始め、背面(.ring)の緑色が見えてくる*/
+        background: #eef3f7
+    }
+
+    50% {
+        transform: rotate(180deg);/*アニメーション1秒時点：グレーのままで反転、緑色は半分見えた状態*/
+        background: #eef3f7
+    }
+
+    100%,50.01% {
+        /*アニメーション1～2秒時点：再び右側に入りかけた瞬間、長方形が緑色に変わり一回転して元居た右側に戻る*/
+        /*実質、1秒時点でアニメーションの動きは完了する*/
+        transform: rotate(360deg);
+        background: #13ff06;/*ここの色を変えると分かりやすい(この色とか)➡#0640ff*/
+    }
+}
+
+@keyframes rotate-ring-left-90 {
+    0%,50%{
+        transform: rotate(0);
+        /*アニメーション0～1秒時点：左に来ている右側の長方形が180度回転して反転するまでは左側は動かない*/
+        /*実質、1秒は何もしないで待つ*/
+    }
+
+    100% {
+        transform: rotate(144deg);
+        /*アニメーション1～2秒時点：左側にあったグレーの長方形が傾き始め、背面(.ring)の緑色を見せていきつつ、
+        右側の緑色になった長方形の下にもぐりこんでいく*/
+    }
+}
